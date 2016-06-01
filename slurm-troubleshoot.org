@@ -26,9 +26,22 @@
      the number of resources (e.g. GPU's) that can be used by running
      jobs. You must wait for some of your running jobs to finish
      before this one can be started.
+   - QOSResourceLimit: Hitting QoS limits.
+
+** Most common reason codes 2
+
    - launch failed requeued held: Job launch failed, slurm requeued
      the job but it must be released with "scontrol release JOBID"
    - Dependency: Job cannot start before some other job is finished.
    - DependencyNeverSatisfied: Job cannot start before some other job
      is finished, but that other job failed. You must cancel the job
      with "scancel JOBID"
+
+* GrpTRESRunMins?
+
+To prevent a single user from monopolizing all resources, we use
+GrpTRESRunMins. See your limits with "sacctmgr list user $USER witha
+format=Account,MaxCPUs,GrpTRESRunMins%50,GrpTRES%40".
+
+- E.g. a GrpTRESRunMins limit "cpu=1500000" means that the remainig
+  runtime of your running jobs must be less than 1500000 cpu-minutes
