@@ -1,0 +1,34 @@
+#+Title: Slurm troubleshooting
+#+Author: Janne Blomqvist
+
+#+OPTIONS: num:nil
+
+* Some common problems with Slurm
+
+  - Why is my job never scheduled?
+  - What do these cryptic "Reason" things mean?
+
+* Reason for queuing jobs
+
+  - See the list of pending jobs with "squeue -t PD"
+  - The last column, "NODELIST (REASON)" shows why the job isn't running
+  - Open the manual page for squeue with "man squeue"
+    - See the section "JOB REASON CODES" towards the end
+      - The list is NOT exhaustive
+
+** The most common reason codes
+
+   - Priority: There is another pending job with higher priority
+   - Resources: The job has the highest priority, but waiting for
+     resources to become available, that is, for some running job to
+     finish.
+   - AssocMaxJobsLimit: The association (=user/group) has a limit on
+     the number of resources (e.g. GPU's) that can be used by running
+     jobs. You must wait for some of your running jobs to finish
+     before this one can be started.
+   - launch failed requeued held: Job launch failed, slurm requeued
+     the job but it must be released with "scontrol release JOBID"
+   - Dependency: Job cannot start before some other job is finished.
+   - DependencyNeverSatisfied: Job cannot start before some other job
+     is finished, but that other job failed. You must cancel the job
+     with "scancel JOBID"
