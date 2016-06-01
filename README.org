@@ -1,0 +1,8 @@
+#+Title: SCiP presentations
+#+Author: Janne Blomqvist
+
+* Howto
+Presentations for the Scientific Computing in Practice courses. Slides
+are in Emacs org-mode format, meant to be exported to reveal.js for
+viewing using the Emacs org-reveal package.
+
