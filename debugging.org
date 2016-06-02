@@ -1,0 +1,23 @@
+#+Title: Debugging code
+#+Author: Janne Blomqvist
+
+#+OPTIONS: num:nil
+
+* Scope
+  - My code compiles, but... when I run it, it just says "Segmentation fault"
+    - Help?!
+  - This is about how to compile C/C++/Fortran/etc. code
+    - python/R/Matlab etc. extensions have their own debuggers. 
+      - Basic principles the same, details differ.
+
+** A little aside...
+
+   - Should you really be writing C/C++/Fortran, in 2016?
+     - If you have to extend/maintain existing code, sure..
+     - But for new code?
+   - C wasn't state of the art in 1972, even less so today..
+     - Lack of memory safety
+     - Undefined- and implementation-defined behavior everywhere
+     - Lots of gotchas, e.g. wrt. alias analysis, signed overflow.
+   - C++ inherits the C mess
+   - Fortran is a little better, but not much
