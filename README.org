@@ -8,3 +8,5 @@ viewing using the Emacs org-reveal package.
 
 For instructions how to set up org-reveal, see
 https://github.com/yjwen/org-reveal
+* Contributing
+  Contribute to these slides by making a pull request at https://github.com/jabl/scip-slides.
