@@ -3,11 +3,6 @@
 
 #+OPTIONS: num:nil
 
-* Some common problems with Slurm
-
-  - Why is my job never scheduled?
-  - What do these cryptic "Reason" things mean?
-
 * Reason for queuing jobs
 
   - See the list of pending jobs with "squeue -t PD"
@@ -45,3 +40,26 @@ format=Account,MaxCPUs,GrpTRESRunMins%50,GrpTRES%40".
 
 - E.g. a GrpTRESRunMins limit "cpu=1500000" means that the remainig
   runtime of your running jobs must be less than 1500000 cpu-minutes
+* Queue priority
+  In triton we use a hierarchical fair share algorithm which assings a
+  priority value to each pending job.
+  - The goal is to balance usage so that each department and user gets
+    their own fair share of the available resources.
+  - Historical usage is taken into account, exponetially decayed with
+    half-life of 2 weeks.
+  - That is:
+    - Use lots of resources => lower priority
+    - Use less resource => higher priority
+  - See the "sprio" tool
+* Job failure
+  - Check the your recently completed jobs: slurm history 3days
+  - Check an individual job record: sacct -j JOBID
+  - More info with "-l" switch
+  - See the "State" and ExitCode columns
+    - State=COMPLETED and ExitCode=0:0 means (slurm thinks) the job
+      completed successfully
+  - If the job failed
+    - The stdout file (e.g. slurm-JOBID.out by default) often contains
+      the reason.
+      - E.g. job was killed due to breaching the time limit, or memory
+        limit
