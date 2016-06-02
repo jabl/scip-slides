@@ -7,8 +7,9 @@
   - My code compiles, but... when I run it, it just says "Segmentation fault"
     - Help?!
   - This is about how to compile C/C++/Fortran/etc. code
-    - python/R/Matlab etc. extensions have their own debuggers. 
-      - Basic principles the same, details differ.
+    - python/R/Matlab etc. extensions have their own debuggers
+      - Basic principles the same, details differ
+  - Overview of available tools
 
 ** A little aside...
 
@@ -18,8 +19,15 @@
    - C wasn't state of the art in 1972, even less so today..
      - Lack of memory safety
      - Undefined- and implementation-defined behavior everywhere
-     - Lots of gotchas, e.g. wrt. alias analysis, signed overflow.
+     - Lots of gotchas, e.g. wrt. aliasing, signed overflow
        - New compiler optimizations frequently break old code that
          "used to work"
    - C++ inherits the C mess
    - Fortran is a little better, but not much
+
+* Tools
+
+  - What can you do to help figure out the reason for the crash?
+    - Compiler flags
+    - Sanitizers and Valgrind
+    - Using the debugger
