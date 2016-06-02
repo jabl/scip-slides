@@ -17,11 +17,11 @@ int main() {
     return 0;
 }
 #+END_SRC
-  - Compile it with ~gcc hello.c~
+  - Compile it with ~gcc -O2 -Wall -g hello.c~
   - This generates a binary called ~a.out~
   - Run it with ~./a.out~
-  - Don't like ~a.out~? Choose your own name with ~gcc -o myprog
-    hello.c~
+  - Don't like ~a.out~? Choose your own name with ~gcc -o myprog -O2
+    -Wall -g hello.c~
 
 * Multiple source files
   - Most non-trivial programs consist of several source files.
@@ -32,8 +32,8 @@ int main() {
   - Typically you don't run the linker directly, the /compiler driver/
     takes care of it.
 #+BEGIN_SRC shell
-gcc -c a.c
-gcc -c b.c
+gcc -c -O2 -g -Wall a.c
+gcc -c -O2 -g -Wall b.c
 gcc a.o b.o
 #+END_SRC
 
@@ -110,3 +110,12 @@ implicit targets for .o files.
      - Probably the most common autotools alternative is *CMake*
        - Has good and bad points compared to autotools
      - Pick your poison..
+
+*** Autotools exercise
+
+    - "Autotoolify" the simple example with a.c and b.c
+    - If you want credits: Email us a .tar.xz file with a project
+      folder containing Makefile.am, configure.ac, a.c, b.c, and other
+      needed files. Don't include the binaries or object files!
+      - Hint: Create the archive with ~tar caf
+        $USER-autoexercise.tar.xz directory/~
