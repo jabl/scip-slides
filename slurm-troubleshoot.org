@@ -1,7 +1,7 @@
 #+Title: Slurm troubleshooting
 #+Author: Janne Blomqvist
 
-#+OPTIONS: num:nil
+#+OPTIONS: num:nil timestamp:nil
 
 * Reason for queuing jobs
 
