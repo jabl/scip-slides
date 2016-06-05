@@ -4,8 +4,14 @@
 #+LATEX_CLASS: article
 
 * Introduction
-These exercises are collected from the slide sets, plus a little bit
-more instructions.
+Return the exercises by email to janne.blomqvist@aalto.fi no later
+than 20.6.2016 9 o'clock (9 in the morning, that is).
+
+To pass the course, you must score at least 50% of the maximum
+exercise score. Some of the exercises will likely be difficult if
+you're not familiar with Linux system programming; however don't be
+discouraged by this as the judging will take this into account and be
+correspondingly lenient.
 
 * Autotoolify
 
@@ -20,12 +26,14 @@ installable in the usual way, that is:
 ./configure --prefix=/some/install_path; make; make install
 #+END_SRC
 
-*Hint*: See e.g. the guide at [[https://autotools.io]].
+*Hint*: See e.g. the guide at [[https://autotools.io]]. Note that if you
+have managed to setup your autotools project properly, you should be
+able to create the distribution package with ~make dist~.
 
 * Debugging a segfault
 
 Take a look at ~/scratch/scip/debug/boom.c~. Use the debugging
-techniques covered in the lectures try to figure out where the fault
+techniques covered in the lectures try to figure out what the fault
 is. When submitting the exercise, please provide a /diff/ between the
 original version and your fixed version, e.g. run a command like
 
