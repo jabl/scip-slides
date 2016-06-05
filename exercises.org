@@ -1,8 +1,9 @@
 #+Title: SCiP building and debugging exercises
 #+Author: Janne Blomqvist
-#+OPTIONS: num:2
+#+OPTIONS: num:2 timestamp:nil
 #+LATEX_CLASS: article
 
+* Introduction
 These exercises are collected from the slide sets, plus a little bit
 more instructions.
 
