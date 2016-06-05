@@ -10,12 +10,12 @@ more instructions.
 * Autotoolify
 
 Given the source code files a.c, b.c, and b.h, which you can find at
-/scratch/scip/building, create an autotools project for building and
+~/scratch/scip/building~, create an autotools project for building and
 distributing it. That is, the end result should be an archive file
 (.tar.gz or such) containing the three source files, a ~configure~
 script, ~Makefile.am~ and ~configure.ac~. The package should be
 installable in the usual way, that is ~./configure; make; make
-install~. 
+install~.
 
 *Hint*: See e.g. the guide at [[https://autotools.io]].
 
