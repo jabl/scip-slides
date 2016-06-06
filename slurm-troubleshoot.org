@@ -50,7 +50,7 @@ format=Account,MaxCPUs,GrpTRESRunMins%50,GrpTRES%40~".
     half-life of 2 weeks.
   - That is:
     - Use lots of resources => lower priority
-    - Use less resource => higher priority
+    - Use less resources => higher priority
   - See the ~sprio~ tool
 * Job failure
   - Check the your recently completed jobs: ~slurm history 3days~

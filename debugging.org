@@ -132,13 +132,8 @@ main () at foo.c:5
 
   - Try the example from the previous slide yourself.
   - Instead of GDB, try with valgrind and AddressSanitizer.
-  - For AddressSanitizer, you want to use [[https://raw.githubusercontent.com/llvm-mirror/compiler-rt/master/lib/asan/scripts/asan_symbolize.py][asan_symbolize.py]]
-#+BEGIN_SRC shell
-$ ./a.out 2>&1 | ./asan_symbolize.py
-#+END_SRC
   - When would you want to use GDB, valgrind, or AddressSanitizer?
     Which one is "best"?
-  - What happens without asan_symbolize.py? Why is it useful?
 
 *** Core dumps
   - Remember the error message: Segmentation fault (core dumped)
