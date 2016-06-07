@@ -6,7 +6,7 @@
 * Scope
   - My code compiles, but... when I run it, it just says "Segmentation fault"
     - Help?!
-  - This is about how to compile C/C++/Fortran/etc. code
+  - This is about how to debug C/C++/Fortran/etc. code
     - python/R/Matlab etc. extensions have their own debuggers
       - Basic principles the same, details differ
   - Overview of available tools
