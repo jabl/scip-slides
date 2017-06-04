@@ -8,5 +8,11 @@ viewing using the Emacs org-reveal package.
 
 For instructions how to set up org-reveal, see
 https://github.com/yjwen/org-reveal
+
+For markdown sources, one can generate a reveal.js presentation with
+pandoc using a command like:
+
+pandoc -s -t revealjs -o building-code.html building-code.md
+
 * Contributing
   Contribute to these slides by making a pull request at https://github.com/jabl/scip-slides.
