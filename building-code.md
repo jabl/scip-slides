@@ -243,5 +243,7 @@ make dist
 - It should be possible to build the code with
 
 ~~~bash
-mkdir build; cd build; cmake ..; make
+mkdir build; cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/some/install_path ..
+make; make install
 ~~~
