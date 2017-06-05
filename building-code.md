@@ -49,7 +49,7 @@ int main() {
 -   Typically you don't run the linker directly, the *compiler driver*
     takes care of it.
 
-``` {.shell}
+``` {.bash}
 gcc -c -O2 -g -Wall a.c
 gcc -c -O2 -g -Wall b.c
 gcc a.o b.o
@@ -94,9 +94,9 @@ gcc a.o b.o
 
 ### Makefile example (simple)
 
-[comment]: # An example will make this more clear.  This is manually creating all Makefile rules.  Format is "output: dependencies  \n   instructions".
+[comment]: # An example will make this more clear.  This is manually creating all Makefile rules.  Format is output: dependencies  \n  instructions.
 
-``` {.make}
+``` {.makefile}
 a.o: a.c
     gcc -c -O2 -g -Wall a.c
 
@@ -107,11 +107,13 @@ myprog: a.o b.o
     gcc -o myprog a.o b.o
 ```
 
+---
+
 ### Makefile example (more typical)
 
-[comment]: # Here's a more realistic example.  There is aggressive use of variables, templating, and implicit rules.
+[comment2]: # Here's a more realistic example.  There is aggressive use of variables, templating, and implicit rules.
 
-``` {.make}
+``` {.makefile}
 CC=gcc
 CFLAGS=-O2 -Wall -g
 LDFLAGS=
@@ -219,7 +221,7 @@ Autotools
 - That is, this should be a typical software package that one could
   install with
 
-``` {.shell}
+``` {.bash}
 ./configure; make; make install
 ```
 
@@ -228,7 +230,7 @@ Autotools
 - Hint: If you have your autotools project setup correctly you can
   create the distribution package with
 
-``` {.shell}
+``` {.bash}
 make dist
 ```
 
@@ -240,6 +242,6 @@ make dist
 
 - It should be possible to build the code with
 
-~~~
+~~~bash
 mkdir build; cd build; cmake ..; make
 ~~~
