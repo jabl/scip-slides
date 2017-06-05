@@ -92,9 +92,24 @@ gcc a.o b.o
 
 ---
 
-### Makefile example
+### Makefile example (simple)
 
-[comment]: # Maybe an example will make this a bit clearer...
+[comment]: # An example will make this more clear.  This is manually creating all Makefile rules.  Format is "output: dependencies  \n   instructions".
+
+``` {.make}
+a.o: a.c
+    gcc -c -O2 -g -Wall a.c
+
+b.o: b.c
+    gcc -c -O2 -g -Wall b.c
+
+myprog: a.o b.o
+    gcc -o myprog a.o b.o
+```
+
+### Makefile example (more typical)
+
+[comment]: # Here's a more realistic example.  There is aggressive use of variables, templating, and implicit rules.
 
 ``` {.make}
 CC=gcc
