@@ -3,6 +3,7 @@ attr_reveal: ':frag (none none appear)'
 author:
 - Janne Blomqvist
 title: Building code
+theme: beige
 ---
 
 Scope
