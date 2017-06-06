@@ -79,6 +79,8 @@ priority value to each pending job.
     -   Use lots of resources =&gt; lower priority
     -   Use less resources =&gt; higher priority
 -   See the `sprio` tool
+- Also: `scontrol show job JOBID` will show the estimated start time
+  of your job (if the scheduler has ever reached it)
 
 ---
 
