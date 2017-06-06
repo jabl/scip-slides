@@ -223,11 +223,11 @@ takes care of setting up all the MPI ranks.
    *Hint*: To compile deviceQuery, you need to copy the samples
    directory and run make:
 
-   ```bash
-   cp -a $CUDA_HOME/samples .
-   cd samples/1_Utilities/deviceQuery
-   make
-   ```
+```bash
+cp -a $CUDA_HOME/samples .
+cd samples/1_Utilities/deviceQuery
+make
+```
 
 ---
 
