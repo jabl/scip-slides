@@ -1,7 +1,7 @@
 ---
 title: Advanced Slurm usage
 author: Janne Blomqvist
-theme: serif
+theme: beige
 ---
 
 # Scope
@@ -18,12 +18,12 @@ advanced usage, namely:
 
 ---
 
-# Advanced slurm features
+## Advanced slurm features
 
 For running these "non-standard" types of jobs, you need additional
 options in your job submission.
 
-## Lets begin!
+### Lets begin!
 
 ---
 
@@ -151,3 +151,87 @@ sbatch --dependency=afterok:${idA} jobB.sh
 to handle errors when submitting jobA.)
 
 *Note*: This also works for job arrays!
+
+---
+
+# Parallel jobs
+
+Slurm makes a distinction between multiple processes (tasks) and the
+number of threads for each task.
+
+- If you ask for multiple tasks you might get allocated CPU's on
+  multiple nodes, which won't work if you want to run a single process
+  with multiple threads.
+
+---
+
+## Multithreaded jobs
+
+To specify the number of threads per task, use the
+`-c`/`--cpus-per-task=` option.
+
+```bash
+#SBATCH -c 4
+```
+
+If you're using OpenMP, always set
+
+```bash
+export OMP_PROC_BIND=true
+```
+
+---
+
+## Multiple tasks
+
+To specify the number of tasks, use the `-n`/`--ntasks=` option
+
+```bash
+#SBATCH -n 48
+```
+
+*Note*: Slurm runs the job script on the first allocated node, it's up
+to you to make use of all the other task slots allocated!
+
+In most cases, you're using MPI, and the MPI runtime Slurm integration
+takes care of setting up all the MPI ranks.
+
+---
+
+## Combining all of the above
+
+- Yes, you can create an array job using multiple tasks, multiple
+  threads per task, dependencies on other jobs etc.
+
+- Most likely, you won't need to do all of this at once!
+
+---
+
+## Hands-on exercise
+
+1. Create a chain of jobs A -> B -> C each depending on the succesful
+   completion of the previous job. In each job, run e.g. `sleep 120`
+   (sleep for 2 minutes) to give you time to investigate the
+   queue. What happens if at the end of the job A script, you put
+   `exit 1`?
+
+---
+
+### Hands-on 2
+
+2. Run a GPU job where you run the deviceQuery sample application.
+   *Hint*: To compile deviceQuery, you need to copy the samples
+   directory and run make:
+
+   ```bash
+   cp -a $CUDA_HOME/samples .
+   cd samples/1_Utilities/deviceQuery
+   make
+   ```
+
+---
+
+### Hands-on 3
+
+3. Create a parallel job script with `-n 10`. Run `hostname`, then
+   `srun hostname`. What happens?
