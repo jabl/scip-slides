@@ -1,6 +1,8 @@
 PD:=pandoc -s -t revealjs
 
-OBJS=building-code.html slurm-advanced.html slurm-troubleshoot.html
+OBJS=building-code.html slurm-advanced.html slurm-troubleshoot.html \
+debugging.html
+
 all: $(OBJS)
 
 %.html: %.md
