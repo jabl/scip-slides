@@ -1,7 +1,7 @@
 ---
 title: Advanced Slurm usage
 author: Janne Blomqvist
-theme: beige
+theme: white
 ---
 
 # Scope

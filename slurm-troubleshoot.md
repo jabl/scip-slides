@@ -3,7 +3,7 @@ attr_reveal: ':frag (none none appear)'
 author:
 - Janne Blomqvist
 title: Slurm problems
-theme: beige
+theme: white
 ---
 
 
