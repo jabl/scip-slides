@@ -137,6 +137,18 @@ Magic in the Makefile in the previous slide: Implicit GNU make rules
 
 ---
 
+### Compiling in parallel
+
+- Note that make supports running individual targets in parallel
+```{.makefile}
+make -j MAX_NUMBER_OF_PARALLEL_JOBS
+```
+  - This requires that the dependencies are correct!
+  - Often not the case in practice...
+    - Sometimes it works to iterate...
+
+---
+
 ## Makefile generation tools
 
 So what about a tool that generates Makefiles?  Such tools exist, the
@@ -248,3 +260,30 @@ mkdir build; cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/some/install_path ..
 make; make install
 ~~~
+
+
+---
+
+# Building parallel programs
+
+- For parallel programs, there are some *small* additions to the
+previous instructions.
+
+---
+
+## OpenMP
+
+- To enable OpenMP, you need to add a special compile (and link) flag to the compiler.
+  - GNU: `-fopenmp`
+  - Intel: `-qopenmp`
+
+---
+
+## MPI
+
+- To compile MPI applications, you use "special" MPI compilers.
+  - When you load an MPI environment via the module system, the appropriate MPI compilers turn up on your `$PATH`.
+  - (These are not actually separate compilers, but rather wrapper programs that add various libraries etc. So e.g. if you have loaded a GNU MPI environment, the MPI compilers will use GCC.)
+- C: `mpicc`
+- C++: `mpicxx` or `mpiCC` or `mpic++`
+- Fortran: `mpifort`
