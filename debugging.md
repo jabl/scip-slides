@@ -48,6 +48,9 @@ A little aside...
 -   Looking for an alternative? Check out
     [Rust](https://www.rust-lang.org/)
     -   Rust goals: safety, speed, and concurrency
+    - Alternatively, higher level languages with decent performance. E.g.
+      - [Julia](https://julialang.org/)
+      - [Haskell](https://www.haskell.org/)
 
 ---
 
