@@ -37,6 +37,18 @@ int main() {
 
 ---
 
+## Common compile options
+
+- Optimization: `-O2` tends to be the basic option, safe in the sense
+  it almost always makes the code faster.
+    - `-O3` more aggressive, might make code faster, or not (measure!).
+    - `-ffast-math` Potentially unsafe floating point optimizations.
+    - `-funroll-loops` Might help tight loop kernels.
+- Warnings: `-Wall` Warnings for common problems. Usually a good idea.
+- Debug symbols: `-g` Usually worth having.
+
+---
+
 ## Multiple source files
 
 -   Most non-trivial programs consist of several source files.
