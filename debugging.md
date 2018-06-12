@@ -18,16 +18,16 @@ theme: white
 
 ---
 
-A little aside...
------------------
+### A little aside
 
--   Should you really be writing C/C++/Fortran, in 2016?
+
+-   Should you really be writing C/C++/Fortran, in 2018?
     -   If you have to extend/maintain existing code, sure..
     -   But for new code?
 -   C wasn't state of the art in 1972, even less so today..
     -   Lack of memory safety
-    -   Undefined- and implementation-defined behavior everywhere
-    -   Lots of gotchas, e.g. wrt. aliasing, signed overflow
+    -   Undefined and implementation-defined behavior everywhere
+        e.g. wrt. aliasing, signed overflow
         -   New compiler optimizations frequently break old code that
             "used to work"
         -   With a modern optimizing compiler, C is **very** far from
