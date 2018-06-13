@@ -344,12 +344,16 @@ The dynamic linker (ld.so)
 
 ---
 
-### Exercise: ls
+### Exercise: tracing
 
--   Use *strace* to see what syscalls `ls` makes and try to understand
-    what it's doing. **Hint** If you don't know what a syscall does,
-    check the manual: `man foo`
--   Same as above, but check `ls -l`. What is the difference?
--   Use ldd to check which dynamic libraries are used by ls
--   Use readelf to inspect the ls binary
+- Load a toolchain module, compile `/scratch/scip/debug/blas.c` (link
+  with a suitable BLAS library such as OpenBLAS or MKL depending on
+  the toolchain).
+- Use *strace* to see what syscalls it makes and try to understand
+  what it's doing. **Hint** If you don't know what a syscall does,
+  check the manual: `man foo`
+- Same as above, but run it with `OMP_NUM_THREADS=1`. What is the
+  difference?
+- Use ldd to check which dynamic libraries are used by the binary
+- Use readelf to inspect the binary
 
